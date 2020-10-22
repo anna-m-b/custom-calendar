@@ -1,0 +1,69 @@
+@mixin titleFontStyles {
+  font-family: $titleFont;
+  font-weight: 600;
+
+}
+
+
+@mixin clearFix {
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// take out height 100vh
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  width: 97vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding:0;
+  border:0;
+}
+
+
+@mixin cta {
+  min-width: 30vw;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  background-color: $lighterGreen;
+  box-shadow: 4px 3px 1px rgba($darkerGreen, .3);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: $lighterGrey;
+  a {
+  color: $grey;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 300;
+  }
+}
+
+@mixin input {
+  width: 80vw;
+  margin-bottom: 10px;
+  height: 45px;
+  padding-left: 10px;
+  border: 1px solid #E8E8E8;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: -3px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+@mixin select {
+    width: 19vw;
+    height: 30px;
+    font-family: $mainFont;
+    font-size: 0.8rem;
+    background-color: white;
+    padding: 0;
+    padding-left: 3vw;
+}

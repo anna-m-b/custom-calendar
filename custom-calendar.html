@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+   
+    <title>Custom Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  </head>
+  <body>
+    <div class="calendar-container">
+
+      <h1>Custom Calendar</h1>
+    
+      <div class="date-picker">
+        
+        <div class="month">
+            <div class="arrows" id="prev-mth">&lt;</div>
+            <div id="mth"></div>
+            <div class="arrows" id="nxt-mth">&gt;</div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th class="saturday">Sat</th>
+                    <th class="sunday">Sun</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="saturday"></td>
+                    <td class="sunday"></td> 
+                </tr>
+            </tbody>
+        </table>
+        
+      </div> <!-- end date picker div-->
+  </div> <!-- end calendar container div-->
+
+  <div class="settings">
+    <label for="show-sat" class="switch">Show Saturdays</label>
+    <input checked type="checkbox" id="show-sat">
+    <span class="slider"></span>
+
+    <label for="show-sun" class="switch">Show Sundays</label>
+    <input checked type="checkbox" id="show-sun">
+    <span class="slider"></span>
+
+    <label for="disable-past" class="switch">Disable past dates</label>
+    <input type="checkbox" id="disable-past">
+    <span class="slider"></span>
+  </div>
+  
+  <script src="custom-calendar.js"></script>
+
+  </body>
+</html>
+
