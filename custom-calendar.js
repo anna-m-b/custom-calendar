@@ -158,7 +158,6 @@ document.addEventListener('click', function(event) {
 // HIGHLIGHT SELECTED DAY & GET DATA OF SELECTED DATE 
 let selectedDate; 
 const selectDate = (target) => {
- 
   if (target.classList.contains('selected-day')) {
     target.classList.remove('selected-day')
   } else { 
@@ -169,8 +168,12 @@ const selectDate = (target) => {
   }
 }
 
+
 allDays.forEach(td => td.addEventListener('click', function(event) {
-  let target = event.target;
+  let target = event.target
+  if (!target.innerHTML) {
+    return;
+  }
   date = new Date();
   if(disablePastDatesBtn.checked) {
     if (target.innerHTML >= date.getDate() && currentMonth >= date.getMonth()) {
@@ -183,11 +186,6 @@ allDays.forEach(td => td.addEventListener('click', function(event) {
     document.getElementById('selected-date').innerHTML =  selectedDate;
   }
 }));
-
-
-
-
-// DISPLAY SELECTED DATE //
 
 
 

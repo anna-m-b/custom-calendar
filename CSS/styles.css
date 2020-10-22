@@ -31,7 +31,6 @@ h1 {
   background-color: whitesmoke;
   margin: 30px auto;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   user-select: none;
 }
 
@@ -46,9 +45,11 @@ h1 {
 
 .arrows {
   padding: 1rem;
+  cursor: pointer;
 }
 
 table {
+  cursor: pointer;
   margin-top: 15px;
   padding: 0 15px;
   width: 100%;
