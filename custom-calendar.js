@@ -136,7 +136,6 @@ document.addEventListener('click', function(event) {
         }
         date = new Date(year, currentMonth);
         displayMonth(date, currentMonth);
-        console.log(currentMonth);
         togglePastDates()
     }
 
@@ -152,8 +151,6 @@ document.addEventListener('click', function(event) {
         displayMonth(date, currentMonth);
         togglePastDates()
     }
-
-
 });
     
 
@@ -167,12 +164,8 @@ const selectDate = (target) => {
   } else { 
     removeSelectedDay(); 
     target.classList.add('selected-day');
-    selectedDate = { 
-        day: target.innerHTML, 
-        month: (currentMonth + 1), 
-        year: year
-    }
-    return selectedDate;
+    selectedDate = `${target.innerHTML}/${(currentMonth + 1)}/${year}`
+     return selectedDate;
   }
 }
 
@@ -181,18 +174,20 @@ allDays.forEach(td => td.addEventListener('click', function(event) {
   date = new Date();
   if(disablePastDatesBtn.checked) {
     if (target.innerHTML >= date.getDate() && currentMonth >= date.getMonth()) {
-       return selectDate(target)
+      selectDate(target)
+       document.getElementById('selected-date').innerHTML =  selectedDate;
     }
   
   } else {
-    return selectDate(target)
+     selectDate(target)
+    document.getElementById('selected-date').innerHTML =  selectedDate;
   }
 }));
 
 
 
 
-
+// DISPLAY SELECTED DATE //
 
 
 

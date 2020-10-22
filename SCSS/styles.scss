@@ -78,8 +78,11 @@ td {
     color: grey;
 }
 
+
 .selected-day {
-  background-color: magenta;
+  color: #e01e37;
+  font-weight: bold;
+  text-decoration: underline;
 }
         
 .hidden {
@@ -89,6 +92,23 @@ td {
 .past-date {
   color: rgb(203, 203, 203);
 }
+
+
+.display-selected-date {
+  place-self:center;
+  // border: 1px solid #e01e37;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#selected-date {
+  padding: 1rem;
+  color:#e01e37;
+}
+
+
+// toggle styles from:  https://adrianroselli.com/2019/03/under-engineered-toggles.html
 
 .toggles {
   display: block;
@@ -162,4 +182,3 @@ td {
   background-position: center center;
 }
 
-// toggle styles from:  https://adrianroselli.com/2019/03/under-engineered-toggles.html
