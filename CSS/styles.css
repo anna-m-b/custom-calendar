@@ -44,6 +44,10 @@ h1 {
   font-size: 1.2rem;
 }
 
+.arrows {
+  padding: 1rem;
+}
+
 table {
   margin-top: 15px;
   padding: 0 15px;
