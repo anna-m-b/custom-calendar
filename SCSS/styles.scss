@@ -2,10 +2,6 @@
 @use "mixins" as m;
 
 
-body {
-  background-color: white;
-}
-
 
 .calendar-container > * {
     box-sizing: border-box;
@@ -13,7 +9,7 @@ body {
 } 
 
 .calendar-container {
-    background-color: scale-color(teal, $lightness: 25%);
+    background-color: whitesmoke;
     font-family: v.$mainFont;
     color: v.$grey;
     margin: 0px 8px;
@@ -87,5 +83,79 @@ td {
 }
 
 .past-date {
-  color: whitesmoke;
+  color: rgb(203, 203, 203);
 }
+
+.toggles {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  font-family: v.$mainFont;
+}
+
+.toggles [type="checkbox"] {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.toggles [type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding: 0.5em;
+  padding-left: 4em;
+}
+
+.toggles [type="checkbox"] + label::before,
+.toggles [type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  height: 1.1em;
+  transition: all 0.25s ease;
+}
+
+.toggles [type="checkbox"] + label::before { // the background
+  left: 0;
+  top: 0.18em;
+  width: 2.8em;
+  padding: 0.2em;
+  border: 0.1em solid rgb(175, 184, 193);
+  background: rgb(175, 184, 193);
+  border-radius: 1.1em;
+}
+.toggles [type="checkbox"] + label::after { // the slide button
+  left: 0;
+  top: 0.25em;
+  background-color: #fff;
+  background-position: center center;
+  border-radius: 50%;
+  width: 1.3em;
+  border: 0.21em solid #767676;
+}
+.toggles [type="checkbox"]:checked + label::after {
+  left: 1.6em;
+  border: 0.25em solid #00b4d8;
+  color: #00b4d8;
+}
+
+.toggles [type="checkbox"]:focus + label,
+.toggles [type="checkbox"]:hover + label {
+  color: #00f;
+}
+.toggles [type="checkbox"]:focus + label::before,
+.toggles [type="checkbox"]:hover + label::before {
+  box-shadow: 0 0 0.2em #333;
+}
+
+.toggles [type="checkbox"]:focus + label::after,
+.toggles [type="checkbox"]:hover + label::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='rgba(0,0,0,.25)'/%3E%3C/svg%3E");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+// toggle styles from:  https://adrianroselli.com/2019/03/under-engineered-toggles.html

@@ -8,16 +8,16 @@ let date =  new Date();
 let currentMonth = date.getMonth();
 let year = date.getFullYear();
 
-//get real current month to display
-window.onload = displayMonth(date, date.getMonth())
-
-
 function displayMonth(date, currentMonth) {
     document.getElementById('mth').innerHTML = 
     date.toLocaleString('default', { month: 'long'}) + ',  ' + year;
     fillCal(currentMonth);
 }
 
+//get real current month to display
+window.onload = function() {
+  displayMonth(date, date.getMonth());
+}
 
 
 //get the first day of the current month
@@ -91,6 +91,9 @@ function resetTable() {
 // DISABLE / ENABLE PAST DATES //
 
 const disablePastDatesBtn = document.getElementById('disable-past'); 
+
+
+
 const togglePastDates = () => {
   removeSelectedDay();
   const today = new Date();
@@ -112,12 +115,11 @@ disablePastDatesBtn.addEventListener('click', togglePastDates);
 const saturdays = Array.from(document.getElementsByClassName('saturday'));
 const sundays = Array.from(document.getElementsByClassName('sunday'));
 
-document.getElementById('show-sat').addEventListener('click', function() {
-  saturdays.map(elem => elem.classList.toggle('hidden'));
-});
-document.getElementById('show-sun').addEventListener('click', function() {
-  sundays.map(elem => elem.classList.toggle('hidden'));
-});
+const toggleSaturdays = () => saturdays.map(elem => elem.classList.toggle('hidden'));
+const toggleSundays = () => sundays.map(elem => elem.classList.toggle('hidden'));
+
+document.getElementById('show-sat').addEventListener('click', toggleSaturdays);
+document.getElementById('show-sun').addEventListener('click', toggleSundays);
 
 
 
