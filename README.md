@@ -1,11 +1,14 @@
-A while ago, I decided to challenge myself to build a calendar date-picker from scratch with vanilla JavaScript as part of a now abandoned project. Extracted the calendar to revive with options for the user to customize:
+### Custom Calendar
 
-Working now
+A while ago, I decided to challenge myself to build a calendar date-picker from scratch with vanilla JavaScript with customizable options.
+
+Functional:
    - whether to show a 5, 6 or 7 day week
-   - whether to enable past dates to be selected
+
+Known issue
+ - 'disable past dates' only works for current month (January 2021)
    
- Planned
-   - colour scheme
+
    
   
 
